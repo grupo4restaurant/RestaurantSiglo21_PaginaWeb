@@ -308,7 +308,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /* First Header area css
 ============================================================================================ */
 .first_header {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(8, 8, 8, 8.9);
   overflow: hidden;
   position: absolute;
   left: 0px;
@@ -388,7 +388,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /* Main Menu area css
 ============================================================================================ */
 .main_menu_area {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(255, 255, 255);
   position: absolute;
   width: 100%;
   left: 0;
