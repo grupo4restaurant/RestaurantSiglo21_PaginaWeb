@@ -308,7 +308,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 /* First Header area css
 ============================================================================================ */
 .first_header {
-  background: rgba(8, 8, 8, 8.9);
+  background: rgb(255, 255, 255);
   overflow: hidden;
   position: absolute;
   left: 0px;
@@ -320,7 +320,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 .first_header .header_contact_details a {
   font-size: 12px;
   font-family: "Cantata One", serif;
-  color: #fff;
+  color: #000000;
   line-height: 50px;
   transition: all 400ms linear 0s;
   padding-right: 20px;
@@ -412,7 +412,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Cantata One", serif;
   font-size: 14px;
   letter-spacing: .42px;
-  color: #fff;
+  color: #000000;
   text-transform: uppercase;
   padding: 0px;
   line-height: 100px;
@@ -501,7 +501,8 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .main_menu_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li.submenu .dropdown-menu li a:before {
-  display: none;
+  color: #b10400;
+  background: #000;
 }
 
 .main_menu_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li.submenu .dropdown-menu li:hover a {
@@ -580,7 +581,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .event_btn:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .event_btn:hover:before {
