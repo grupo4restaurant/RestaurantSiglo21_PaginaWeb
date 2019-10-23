@@ -29,6 +29,27 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+        <script type="text/javascript">
+$(document).ready(function(){
+	    		$('#Bebestibles').click(function(){
+	       		$("#txtOut").load("inc/news");
+	    									 });
+
+	    		$('#Django').click(function(){
+	       		$("#txtOut").load("c_django.html");
+	    									 });
+
+	    		$('#Jython').click(function(){
+	       		$("#txtOut").load("c_jython.html");
+	    									 });
+										});
+</script>
+        
+        
+        
+        
     </head>
     <body>
        
@@ -78,6 +99,10 @@
         </section>
         <!--================End Banner Area =================-->
         
+
+        <ul><li id="bebestibles"><a href="#">Bebestibles</a></li></ul>
+        
+        
         <!--================End Our feature Area =================-->
         <section class="most_popular_item_area menu_list_page">
             
@@ -86,9 +111,9 @@
                 <div class="popular_filter">
                     <ul>
                         <li class="active" data-filter="*"><a href="">Todo</a></li>
-                        <li data-filter=".break"><a href="">Bebestibles</a></li>
-                        <li data-filter=".break"><a href="">Desayuno</a></li>
-                        <li data-filter=".lunch"><a href="">Almuerzo</a></li>
+                        <li id="bebestibles"><a href="">Bebestibles</a></li>
+                        <li data-filter=".dinner"><a href="">Desayuno</a></li>
+                        <li data-filter=".dinner"><a href="">Almuerzo</a></li>
                         <li data-filter=".dinner"><a href="">Cena</a></li>
                         <li data-filter=".snacks"><a href="">Entradas</a></li>
                         <li data-filter=".coffee"><a href="">Postres</a></li>
@@ -96,11 +121,13 @@
                 </div>
                 
                 
-          <div id="txtOut" ></div>
+          
             </div>
             
+            <div id="txtOut"  ></div>
         </section>
         
+         
         <!--================End Our feature Area =================-->
         
         <!--================End Recent Blog Area =================-->

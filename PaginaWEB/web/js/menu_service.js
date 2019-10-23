@@ -93,7 +93,7 @@ function findById(id) {
 		dataType: "json",
 		success: function(data){
 			$('#btnDelete').show();
-			console.log('findById success: ' + data.name);
+			console.log('findById success: ' + data.catalogo);
 			currentWine = data;
 			renderDetails(currentWine);
 		}
@@ -153,6 +153,8 @@ function deleteWine() {
 
 
 
+
+
 function renderList(data) {
 	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
@@ -163,7 +165,7 @@ function renderList(data) {
 
 	$('#wineList li').remove();
 	$.each(list, function(index, wine) {
-		$('#wineList').append('<li><a href="#" data-identity="' + wine.id + '">'+wine.name+'</a></li>');
+		$('#wineList').append('<li><a href="#" data-identity="' + wine.id + '">'+wine.catalogo+'</a></li>');
                 
                   // creo la tabla y muestro los datos
       $tabla = $('<table></table>');
@@ -181,11 +183,11 @@ var divOut = document.getElementById('txtOut');
    txtOut +=  '<img src="img/menu-grid/bebidas.jpg" alt="" width="200">';
    txtOut +=  '</div>';
    txtOut +=  '<div class="media-body" >';
-   txtOut += '<h3>Bebestibles</h3>';
+   txtOut += ('<h3> '+ list[k].catalogo +'</h3>');
    txtOut += '<br>';
-   txtOut +=('<h3>' + list[k].name + '</h3>');
-   txtOut += ('<h4>' + list[k].year + '</h4>');
-   txtOut += ('<p>' + list[k].grapes + '</p>');
+   txtOut +=('<h3>' + list[k].nombre + '</h3>');
+   txtOut += ('<h4>' + ('$') + list[k].valor + '</h4>');
+   txtOut += ('<p>' + list[k].descripcion + '</p>');
    txtOut +=  '<a class="read_mor_btn" href="#">Agregar</a>';
    txtOut +=  '</div>';
    txtOut += '</div>';
@@ -195,7 +197,49 @@ var divOut = document.getElementById('txtOut');
    
     }
     divOut.innerHTML = txtOut;
-	});                
+	});               
+        
+        
+        
+        
+        function filtradoBebidas (list){
+            return list.catalogo ="Bebidas";
+        }
+        
+        function despliegueBebidas(){
+            
+                 
+    var divOut = document.getElementById('txtOutBebidas');
+    var txtOutBebidas = "";
+    for (var k in filtradoBebidas) {
+  
+   txtOutBebidas += '<div class="p_recype_item_main" >';
+   txtOutBebidas += '<div class="row p_recype_item_active" >';
+   
+   txtOutBebidas += '<div class="media" >';
+   txtOutBebidas +=  '<div class="media-left" >';
+   txtOutBebidas +=  '<img src="img/menu-grid/bebidas.jpg" alt="" width="200">';
+   txtOutBebidas +=  '</div>';
+   txtOutBebidas +=  '<div class="media-body" >';
+  txtOutBebidas += ('<h3> '+ filtradoBebidas[k].catalogo +'</h3>');
+  txtOutBebidas += '<br>';
+   txtOutBebidas +=('<h3>' + filtradoBebidas[k].nombre + '</h3>');
+   txtOutBebidas += ('<h4>' + ('$') + filtradoBebidas[k].valor + '</h4>');
+   txtOutBebidas += ('<p>' + filtradoBebidas[k].descripcion + '</p>');
+   txtOutBebidas +=  '<a class="read_mor_btn" href="#">Agregar</a>';
+   txtOutBebidas+=  '</div>';
+   txtOutBebidas += '</div>';
+   txtOutBebidas += '</div>';
+   txtOutBebidas+= '</div>';
+   txtOutBebidas += '</div>';
+   
+    }
+    divOut.innerHTML = txtOutBebidas;
+            
+            
+        }
+        
+        
 }
 
 
@@ -207,11 +251,11 @@ var divOut = document.getElementById('txtOut');
 
 function renderDetails(wine) {
 	$('#wineId').val(wine.id);
-	$('#name').val(wine.name);
-	$('#grapes').val(wine.grapes);
-	$('#country').val(wine.country);
+	$('#catalogo').val(wine.catalogo);
+	$('#nombre').val(wine.nombre);
+	$('#descripcion').val(wine.descripcion);
 	$('#region').val(wine.region);
-	$('#year').val(wine.year);
+	$('#valor').val(wine.valor);
 	$('#pic').attr('src', 'pics/' + wine.picture);
 	$('#description').val(wine.description);
 }
@@ -221,11 +265,11 @@ function formToJSON() {
 	var wineId = $('#wineId').val();
 	return JSON.stringify({
 		"id": wineId == "" ? null : wineId, 
-		"name": $('#name').val(), 
-		"grapes": $('#grapes').val(),
-		"country": $('#country').val(),
+		"catalogo": $('#catalogo').val(), 
+		"nombre": $('#nombre').val(),
+		"descripcion": $('#descripcion').val(),
 		"region": $('#region').val(),
-		"year": $('#year').val(),
+		"valor": $('#valor').val(),
 		"picture": currentWine.picture,
 		"description": $('#description').val()
 		});
