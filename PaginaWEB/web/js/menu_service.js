@@ -165,35 +165,45 @@ function renderList(data) {
 
 	$('#wineList li').remove();
 	$.each(list, function(index, wine) {
-		$('#wineList').append('<li><a href="#" data-identity="' + wine.id + '">'+wine.catalogo+'</a></li>');
+		$('#wineList').append('<li><a href="#" data-identity="' + wine.id + '">'+wine.catalogo +'</a></li>');
                 
-                  // creo la tabla y muestro los datos
-      $tabla = $('<table></table>');
+              
       
       
 var divOut = document.getElementById('txtOut');
     var txtOut = "";
     for (var k in list) {
-  
-   txtOut += '<div class="p_recype_item_main" >';
-   txtOut += '<div class="row p_recype_item_active" >';
+
    
-   txtOut += '<div class="media" >';
-   txtOut +=  '<div class="media-left" >';
-   txtOut +=  '<img src="img/menu-grid/bebidas.jpg" alt="" width="200">';
-   txtOut +=  '</div>';
-   txtOut +=  '<div class="media-body" >';
-   txtOut += ('<h3> '+ list[k].catalogo +'</h3>');
-   txtOut += '<br>';
-   txtOut +=('<h3>' + list[k].nombre + '</h3>');
-   txtOut += ('<h4>' + ('$') + list[k].valor + '</h4>');
-   txtOut += ('<p>' + list[k].descripcion + '</p>');
-   txtOut +=  '<a class="read_mor_btn" href="#">Agregar</a>';
-   txtOut +=  '</div>';
-   txtOut += '</div>';
-   txtOut += '</div>';
-   txtOut += '</div>';
-   txtOut += '</div>';
+   
+   
+   
+   
+   
+  
+  
+  txtOut += '<div class="card">';
+  txtOut += '<img src="img/menu-grid/bebidas.jpg" class="imagen-curso u-full-width">';
+  txtOut += '<div class="info-card">';
+  txtOut += ('<h3> '+ list[k].catalogo +'</h3>');
+  txtOut +=('<h4>' + list[k].nombre + '</h4>');
+  txtOut += ('<p>' + list[k].descripcion + '</p>');
+  txtOut +=  ('<p class="precio">  <span class="u-pull-right ">' + ('$') + list[k].valor + '</span></p>');
+  txtOut +=  ('<a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="' +list[k].id +'">Agregar Al Carrito</a>');
+  txtOut += '</div>';
+  txtOut += '<BR>';
+  
+   
+   
+                        
+   
+   
+   
+   
+   
+   
+   
+   
    
     }
     divOut.innerHTML = txtOut;
@@ -202,45 +212,9 @@ var divOut = document.getElementById('txtOut');
         
         
         
-        function filtradoBebidas (list){
-            return list.catalogo ="Bebidas";
-        }
-        
-        function despliegueBebidas(){
-            
-                 
-    var divOut = document.getElementById('txtOutBebidas');
-    var txtOutBebidas = "";
-    for (var k in filtradoBebidas) {
-  
-   txtOutBebidas += '<div class="p_recype_item_main" >';
-   txtOutBebidas += '<div class="row p_recype_item_active" >';
-   
-   txtOutBebidas += '<div class="media" >';
-   txtOutBebidas +=  '<div class="media-left" >';
-   txtOutBebidas +=  '<img src="img/menu-grid/bebidas.jpg" alt="" width="200">';
-   txtOutBebidas +=  '</div>';
-   txtOutBebidas +=  '<div class="media-body" >';
-  txtOutBebidas += ('<h3> '+ filtradoBebidas[k].catalogo +'</h3>');
-  txtOutBebidas += '<br>';
-   txtOutBebidas +=('<h3>' + filtradoBebidas[k].nombre + '</h3>');
-   txtOutBebidas += ('<h4>' + ('$') + filtradoBebidas[k].valor + '</h4>');
-   txtOutBebidas += ('<p>' + filtradoBebidas[k].descripcion + '</p>');
-   txtOutBebidas +=  '<a class="read_mor_btn" href="#">Agregar</a>';
-   txtOutBebidas+=  '</div>';
-   txtOutBebidas += '</div>';
-   txtOutBebidas += '</div>';
-   txtOutBebidas+= '</div>';
-   txtOutBebidas += '</div>';
-   
-    }
-    divOut.innerHTML = txtOutBebidas;
-            
-            
-        }
-        
-        
+       
 }
+
 
 
 
