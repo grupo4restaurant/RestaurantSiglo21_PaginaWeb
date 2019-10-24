@@ -9,19 +9,14 @@
         <title>Restaurant Siglo XXI</title>
 
         <!-- Icon css link -->
-        <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="vendors/linears-icon/style.css" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+     
         
-        <!-- Extra plugin css -->
-        <link href="vendors/bootstrap-selector/bootstrap-select.css" rel="stylesheet">
-        <link href="vendors/bootatrap-date-time/bootstrap-datetimepicker.min.css" rel="stylesheet">
-        <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
         
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/responsive.css" rel="stylesheet">
+        
+        
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,21 +26,7 @@
         <![endif]-->
         
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-        <script type="text/javascript">
-$(document).ready(function(){
-	    		$('#Bebestibles').click(function(){
-	       		$("#txtOut").load("inc/news");
-	    									 });
-
-	    		$('#Django').click(function(){
-	       		$("#txtOut").load("c_django.html");
-	    									 });
-
-	    		$('#Jython').click(function(){
-	       		$("#txtOut").load("c_jython.html");
-	    									 });
-										});
-</script>
+ 
         
         
         
@@ -79,8 +60,50 @@ $(document).ready(function(){
                     </div>
                     
                 </div>
+            </div>  
+            
+            
+             <header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            
+            <div class="two columns u-pull-right">
+                <ul>
+                    <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito">
+                            <div id="carrito">
+                                    
+                                    <table id="lista-carrito" class="u-full-width">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                              
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+<div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
             </div>
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="button u-full-widt">Procesar
+                                        Compra</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    </header>
         </div>
+        
+        
+        
+       
         <!--================End Footer Area =================-->
         
         <!--================End Footer Area =================-->
@@ -100,7 +123,7 @@ $(document).ready(function(){
         <!--================End Banner Area =================-->
         
 
-        <ul><li id="bebestibles"><a href="#">Bebestibles</a></li></ul>
+     
         
         
         <!--================End Our feature Area =================-->
@@ -124,8 +147,29 @@ $(document).ready(function(){
           
             </div>
             
-            <div id="txtOut"  ></div>
+            
         </section>
+        
+        
+          <div id="lista-cursos" class="container" >
+        <div class="row" >
+            <div class="four columns" >
+                <div class="card" >
+                    
+                    <div class="info-card"  >
+                        <div id="txtOut"  ></div>
+                       
+                    </div>
+                </div> <!--.card-->
+            </div>
+              </div>
+
+        </div> <!--.row-->
+        
+        <p align="right">Este texto se alineará a la derecha</p>
+        
+       
+         
         
          
         <!--================End Our feature Area =================-->
@@ -237,6 +281,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
        
         <script src="js/menu_service.js"></script>
+        <script src="js/carrito.js"></script>
+        
+        
+        
+        
+            <script src="js2/jquery-3.4.1.min.js"></script>
+    <script src="js2/bootstrap.min.js"></script>
+    <script src="js2/sweetalert2.min.js"></script>
+    <script src="js2/carrito.js"></script>
+
         
         <script src="js/theme.js"></script>
     </body>
