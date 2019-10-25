@@ -1,5 +1,5 @@
 // The root URL for the RESTful services
-var rootURL = "http://localhost:3000/bebidas";
+var rootURL = "http://localhost:3000/bebidas?catalogo=Bebidas";
 
 var currentWine;
 
