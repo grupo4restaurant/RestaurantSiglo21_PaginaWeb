@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     
     <link rel="stylesheet" href="css_carrito/sweetalert2.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="css_filtrado/estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+	<script src="js_filtrado/jquery-3.2.1.js"></script>
+	<script src="js_filtrado/script.js"></script>
+    
 
     <title>Carrito Compras en JavaScript</title>
 </head>
@@ -55,40 +64,78 @@
                 </nav>
             </div>
         </div>
+		
+	
     </header>
-
-    <main>
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
-            <h1 class="display-4 mt-4">Lista de Bebidas</h1>
+     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Menu de siglo XXI</h1>
             <p class="lead">Selecciona el producto a ordenar</p>
-        </div>
-
-        <div class="container" id="lista-productos">
             
-            <div class="card-deck mb-3 text-center">
-                
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                       
-                    </div>
-                    <div class="card-body">
-                        
-                     
-
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <div id="txtOut"  ></div>
-                        </ul>
-                        
-                    </div>
-                </div>
-
-               
-
-            </div>
-
-
         </div>
-    </main>
+    
+   <div class="wrap">
+		<h1></h1>
+                
+		<div class="store-wrapper">
+			<div class="category_list">
+				<a href="#" class="category_item" category="all">Todo</a>
+				<a href="#" class="category_item" category="laptops">Bebidas</a>
+				<a href="#" class="category_item" category="smartphones">Entradas</a>
+				<a href="#" class="category_item" category="smartphones">Fondo</a>
+				<a href="#" class="category_item" category="monitores">Postres</a>
+				
+			</div>
+                    <div class="container" id="lista-productos">
+			<section class="products-list">
+				<div class="product-item" category="laptops">
+			
+            
+                        
+                            <div id="txtOut"> </div>			
+                        
+                         </div>
+				
+				
+				<div class="product-item" category="smartphones">
+			 
+                            <div id="txtOutEntradas"> </div>
+							
+                     
+				</div>
+				<div class="product-item" category="smartphones">
+					
+				</div>
+				<div class="product-item" category="ordenadores">
+					
+				</div>
+				<div class="product-item" category="ordenadores">
+					
+				</div>
+				<div class="product-item" category="monitores">
+					
+				</div>
+				<div class="product-item" category="audifonos">
+					
+				</div>
+                                    </div>
+                                    
+                                    
+			</section>
+		</div>
+	</div>
+    
+    
+    
+    
+    
+ 
+       
+    
+
+
+       
+
+   
 
     <script src="js_carrito/jquery-3.4.1.min.js"></script>
     <script src="js_carrito/bootstrap.min.js"></script>
