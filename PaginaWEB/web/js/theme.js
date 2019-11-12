@@ -168,7 +168,7 @@
     /*  Date Active function
     /*----------------------------------------------------*/
     $(".form_datetime").datetimepicker({
-        format: "dd MM yyyy",
+        format: "yyyy-MM-dd",
         fontAwesome: true,
         autoclose: true,
         todayBtn: true,
@@ -178,15 +178,7 @@
     /*----------------------------------------------------*/
     /*  Time Active function
     /*----------------------------------------------------*/
-    $(".form_time").datetimepicker({
-        format: "hh:ii",
-        fontAwesome: true,
-        autoclose: true,
-        showMeridian: true,
-        todayBtn: true,
-        startView: 2,
-        pickerPosition: "bottom-right"
-    });
+   
     
     
     /*----------------------------------------------------*/
