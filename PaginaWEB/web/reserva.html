@@ -94,47 +94,51 @@
         <section class="booking_table_area booking_area_white">
             <div class="container">
                 
-                <form class="form_area">
+                <form class="form_area" id ="form">
                     
                     
                     <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                         </div>
                     
                     <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="name" placeholder="Rut">
+                            <input type="number" class="form-control" id="rut_cliente" placeholder="Rut">
                         </div>  
                     
                     <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="name" placeholder="Cantidad de personas">
+                            <input type="number" class="form-control" id="cantidad_persona" placeholder="Cantidad de personas">
                         </div>  
                      <div class="form-group col-md-4">
-                            <input type="email" class="form-control" id="email" placeholder="Correo">
+                            <input type="email" class="form-control" id="e_mail_cliente" placeholder="Correo">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="phone" placeholder="Tefono/Celular">
+                            <input type="number" class="form-control" id="fono_cliente" placeholder="Tefono/Celular">
                         </div>
                     
                     <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="name" placeholder="Hora de inicio EJ:20 HRS">
+                            <input type="text" class="form-control" id="hora_inicio" placeholder="Hora de inicio EJ:20 HRS">
                         </div> 
                     
-                    <div class="row">
+                  <div class="form-group col-md-4">
+                            <input type="text" class="form-control" id="fecha" placeholder="FECHA EJ: 23-06-19 HRS">
+                        </div> 
+                    
+                    <!--<div class="row">
                         <div class="col-md-4 form-group">
                             <div class="input-append date form_datetime">
-                                <input size="16" type="text" value="" readonly placeholder="Fecha">
+                                <input id="fecha" size="16" type="text" value="" readonly placeholder="Fecha">
                                 <span class="add-on"><i class="icon-th"></i></span>
                             </div>
-                        </div>
+                        </div> -->
                        
                        
                         
                        
                         <div class="form-group col-md-12">
-                            <textarea class="form-control" rows="3" placeholder="Comentarios adicionales"></textarea>
+                            <textarea class="form-control" rows="3" id="comentarios" placeholder="Comentarios adicionales"></textarea>
                         </div>
                         <div class="col-md-12 form-group">
-                            <button type="button" class="btn btn-default submit_btn">Realizar Reserva</button>
+                            <button type="submit" class="btn btn-default submit_btn">Realizar Reserva</button>
                         </div>
                     </div>
                 </form>
@@ -221,7 +225,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <!--================End Recent Blog Area =================-->
         
         
-        
+        <script src="js/reserva.js"></script>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-2.1.4.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
