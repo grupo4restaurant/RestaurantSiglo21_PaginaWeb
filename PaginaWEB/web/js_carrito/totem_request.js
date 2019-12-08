@@ -1,7 +1,6 @@
 var form = document.forms.namedItem("form");
 form.addEventListener('submit', function(ev){
 
-
 var mesa_id = document.getElementById('id_mesa').innerHTML;
 var mesa_numero = document.getElementById('mesa_numero').innerHTML;
 var mesa_capacidad = document.getElementById('mesa_capacidad').innerHTML;
@@ -25,6 +24,7 @@ xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         mesa_capacidad:mesa_capacidad
     }));
 	ev.preventDefault();
+        
   });
 
         

@@ -52,14 +52,13 @@ function renderList(data) {
 var divOut = document.getElementById('txtOut');
     var txtOut = "";
     for (var k in list) {
-
+ 
  txtOut += '<div class="card mb-4 shadow-sm">';
   txtOut += '<div class="card-body">';
   txtOut += '<img src="img/verde.jpg" width="200" height="150"  >';
   txtOut += '<div class="info-card">';
   //txtOut += ('<h3> '+ list[k].cat_prod_id +'</h3>');
 
-   
   txtOut +=('Mesa<h1 class="my-0 font-weight-bold" id="mesa_numero">'+  list[k].mesa_numero + '</h1>');
   //txtOut += ('<p>' + list[k].cod+ '</p>');
   txtOut +=  ('<h3 class="precio">  Capacidad <span class="card-title pricing-card-title precio" id="mesa_capacidad">' + list[k].mesa_capacidad + '</span></h3>');

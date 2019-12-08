@@ -1,73 +1,62 @@
-$(document).ready(function(){
-    
-    (function($) {
-        "use strict";
+
+(function ($) {
+    "use strict";
 
     
-    jQuery.validator.addMethod('answercheck', function (value, element) {
-        return this.optional(element) || /^\bcat\b$/.test(value)
-    }, "type the correct answer -_-");
+    /*==================================================================
+    [ Validate ]*/
+    var nombre = $('.validate-input input[name="nombre"]');
+    var email = $('.validate-input input[name="email"]');
+    var subject = $('.validate-input input[name="subject"]');
+    var message = $('.validate-input textarea[name="message"]');
 
-    // validate contactForm form
-    $(function() {
-        $('#contactForm').validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                subject: {
-                    required: true,
-                    minlength: 4
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                message: {
-                    required: true,
-                    minlength: 20
-                }
-            },
-            messages: {
-                name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
-                },
-                website: {
-                    required: "come on, you have a web address, don't you?",
-                    minlength: "your address must consist of at least 4 characters"
-                },
-                email: {
-                    required: "no email, no message"
-                },
-                message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
-                }
-            },
-            submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
-                    data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 0.15, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                        })
-                    },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 0.15, function() {
-                            $('#error').fadeIn()
-                        })
-                    }
-                })
-            }
-        })
-    })
-        
- })(jQuery)
-})
+
+    $('.validate-form').on('submit',function(){
+        var check = true;
+
+        if($(nombre).val().trim() == ''){
+            showValidate(nombre);
+            check=false;
+        }
+
+        if($(subject).val().trim() == ''){
+            showValidate(subject);
+            check=false;
+        }
+
+
+        if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+            showValidate(email);
+            check=false;
+        }
+
+        if($(message).val().trim() == ''){
+            showValidate(message);
+            check=false;
+        }
+
+        return check;
+    });
+
+
+    $('.validate-form .input1').each(function(){
+        $(this).focus(function(){
+           hideValidate(this);
+       });
+    });
+
+    function showValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).addClass('alert-validate');
+    }
+
+    function hideValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).removeClass('alert-validate');
+    }
+    
+    
+
+})(jQuery);
