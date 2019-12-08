@@ -91,18 +91,23 @@
         <!--================End Banner Area =================-->
         
         <!--================Booking Table Area =================-->
+        
+        
+      
+        
+        
         <section class="booking_table_area booking_area_white">
             <div class="container">
                 
-                <form class="form_area" id ="form">
+                <form class="form_area" id ="form" onsubmit='return validar()'>
                     
                     
                     <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                            <input title="ingrese su nombre" type="text" class="form-control" id="nombre" name="nombre"  placeholder="Nombre" >
                         </div>
                     
                     <div class="form-group col-md-4">
-                            <input type="number" class="form-control" id="rut_cliente" placeholder="Rut">
+                            <input type="number" class="form-control" id="rut_cliente" placeholder="Rut" data-validate="inserta el rut">
                         </div>  
                     
                     <div class="form-group col-md-4">
@@ -226,6 +231,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         
         <script src="js/reserva.js"></script>
+       
+         
+        
+        
+
+        
+        
+        
+        
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-2.1.4.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

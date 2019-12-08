@@ -38,7 +38,15 @@ class Carrito {
             })
         }
         else {
+             Swal.fire({
+                type: 'info',
+                title: 'Oops...',
+                text: 'El producto ya está agregado',
+                showConfirmButton: false,
+                timer: 1000
+            });
             this.insertarCarrito(infoProducto);
+            
         }
         
     }
@@ -51,7 +59,7 @@ class Carrito {
                 <img src="${producto.imagen}" width=100>
             </td>
             <td>${producto.titulo}</td>
-            <td>$${producto.precio}</td>
+            <td>${producto.precio}</td>
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
@@ -143,7 +151,7 @@ class Carrito {
                     <img src="${producto.imagen}" width=100>
                 </td>
                 <td>${producto.titulo}</td>
-                <td>$${producto.precio}</td>
+                <td>${producto.precio}</td>
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
@@ -209,9 +217,9 @@ class Carrito {
         igv = parseFloat(total * 0.18).toFixed(0);
         subtotal = parseFloat(total-igv).toFixed(0);
 
-        document.getElementById('subtotal').innerHTML = "$: " + subtotal;
-        document.getElementById('igv').innerHTML = "$: " + igv;
-        document.getElementById('total').innerHTML = "$: " + total.toFixed(0);
+        document.getElementById('subtotal').innerHTML = + subtotal;
+        document.getElementById('igv').innerHTML =  + igv;
+        document.getElementById('total').innerHTML =  + total.toFixed(0);
     }
 
     obtenerEvento(e) {

@@ -16,7 +16,7 @@
     
 </head>
 
-<body style="background-color:hsla(200,50%,80%,5.8);">
+<body>
     <header>
         <div class="container">
             <div class="row justify-content-between mb-5">
@@ -41,51 +41,21 @@
         <div class="container">
             <div class="row mt-3">
                 <div class="col">
-                    <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                    <h2 class="d-flex justify-content-center mb-3">Resumen de Tu Pedido</h2>
                     <form id="procesar-pago" >
-                        <div class="form-group row">
-                            <label for="mesa_id" class="col-12 col-md-2 col-form-label h2">Mesa :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="mesa_id"
-                                    placeholder="Ingresa tu numero de mesa">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="usuario_id" class="col-12 col-md-2 col-form-label h2">Mesero :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="usuario_id"
-                                    placeholder="Ingresa nombre cliente">
-                                
-                            </div>
-                        </div>
+                        
                         
                         
                        
                       
-                 <script type="text/javascript">
-window.onload = function(){
-    fecha = new Date();
-    texto = document.getElementById("fechaing");
-    texto.value = fecha.getFullYear()+"-"+(fecha.getMonth()+1)+"-"+fecha.getDate();
-}
-</script>
-   
-                   
-                         
-                        <div class="form-group row">
-                            <label for="fecha" class="col-12 col-md-2 col-form-label h2">Fecha : </label>
-                            <div class="col-12 col-md-10">
-                               <input id="fechaing">
-                                
-                            </div>
-                        </div>
+               
                         
                         
 
                         <div id="carrito" class="table-responsive">
                             <table class="table" id="lista-compra">
                                 <thead>
-                                    <tr >
+                                    <tr>
                                         <th scope="col">Imagen</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Precio</th>
@@ -128,23 +98,17 @@ window.onload = function(){
                         <div class="row justify-content-center" id="loaders">
                             <img id="cargando" src="img/cargando.gif" width="220">
                         </div>
-<script>
-function enviar() {
-   submit();
-   return false
-}
-</script>
+
                         <div class="row justify-content-between">
                             <div class="col-md-4 mb-2">
-                                <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
+                                <a href="index.html" class="btn btn-info btn-block">Modificar pedido</a>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <button type="submit"  class="btn btn-success btn-block"  >Realizar compra</button>
-                                <!--<button type="submit" class="btn btn-block btn-primary agregar-carrito" name="boton" >Cambiar estado </button>-->
+                                <a href="#" class="btn btn-success btn-block" id="procesar-compra">Realizar compra</a>
+                                <button type="submit" class="btn btn-block btn-primary agregar-carrito" name="boton">Pagar orden</button>
                             </div>
                         </div>
                     </form>
-                    
 
 
                 </div>
