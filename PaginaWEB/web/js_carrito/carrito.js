@@ -41,7 +41,7 @@ class Carrito {
              Swal.fire({
                 type: 'info',
                 title: 'Oops...',
-                text: 'El producto ya está agregado',
+                text: 'Se agrego el producto al carrito',
                 showConfirmButton: false,
                 timer: 1000
             });
