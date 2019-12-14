@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row mt-3">
                 <div class="col">
-                    <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                    <h2 class="d-flex justify-content-center mb-3">Realizar Pedido</h2>
                     <form id="procesar-pago" >
                         <div class="form-group row">
                             <label for="mesa_id" class="col-12 col-md-2 col-form-label h2">Mesa :</label>
@@ -55,7 +55,7 @@
                             <label for="usuario_id" class="col-12 col-md-2 col-form-label h2">Mesero :</label>
                             <div class="col-12 col-md-10">
                                 <input type="text" class="form-control" id="usuario_id"
-                                    placeholder="Ingresa nombre cliente">
+                                    placeholder="Ingresa el codigo de tu mesero">
                                 
                             </div>
                         </div>
@@ -92,7 +92,7 @@ window.onload = function(){
                                         <th scope="col">Precio</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Sub Total</th>
-                                        <th scope="col">Eliminar</th>
+                                       
                                     </tr>
 
                                 </thead>
@@ -140,7 +140,7 @@ function enviar() {
                                 <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <button type="submit"  class="btn btn-success btn-block"  >Realizar compra</button>
+                                <button type="submit"  class="btn btn-success btn-block"  >Enviar pedido</button>
                                 <!--<button type="submit" class="btn btn-block btn-primary agregar-carrito" name="boton" >Cambiar estado </button>-->
                             </div>
                         </div>

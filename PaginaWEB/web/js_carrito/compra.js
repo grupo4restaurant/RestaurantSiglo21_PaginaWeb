@@ -61,6 +61,7 @@ const fechahoy = document.getElementById('fechaing').value;
 
 
 
+
 //for(i=0;i<parseando.length;i++){
  //const id = parseando[i]['id'];  
  //}
@@ -68,7 +69,8 @@ const fechahoy = document.getElementById('fechaing').value;
 //const hola = JSON.stringify(parseando[i]['id']);
 //}
 
-     
+    
+        
 	
                 
         const xhr = new XMLHttpRequest();
@@ -95,7 +97,7 @@ const fechahoy = document.getElementById('fechaing').value;
     
     
         
-        
+       
         const cargandoGif = document.querySelector('#cargando');
         cargandoGif.style.display = 'block';
 
