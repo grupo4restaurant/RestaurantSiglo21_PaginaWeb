@@ -23,6 +23,7 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
 
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -147,6 +148,48 @@
                         </div>
                     </div>
                 </form>
+                
+                
+                <div id="app" style="padding-top: 8rem;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-group">
+                        <label>
+                            Nombre:
+                        </label>
+                        <input class="form-control" type="text" v-model="from_name">
+                        </input>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 form-group">
+                        <label>
+                            Asunto:
+                        </label>
+                        <input class="form-control" type="text" v-model="subject">
+                        </input>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 form-group">
+                        <label>
+                            Correo:
+                        </label>
+                        <input class="form-control" type="email" v-model="from_email">
+                        </input>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 form-group">
+                        <label>
+                            Mensaje:
+                        </label>
+                        <textarea class="form-control" v-model="message">
+                        </textarea>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 text-center">
+                        <button @click="enviar" class="btn btn-success">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
                 <div class="row map_contact">
                     <div class="col-md-6">
                         <div class="map_area">
@@ -234,7 +277,61 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
        
          
         
+        <!--================correo =================-->
         
+        
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js">
+        </script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript">
+        </script>
+        <script>
+            (function(){
+                emailjs.init("user_H6jWD2rYGOaXgZ7uvC7Wg");
+             })();
+            var form = document.forms.namedItem("form");
+form.addEventListener('submit', function(ev){
+
+
+var nombrevar = document.getElementById('nombre').value;
+var rut_clientevar = document.getElementById('rut_cliente').value;
+var cantidad_personavar = document.getElementById('cantidad_persona').value;
+var e_mail_clientevar = document.getElementById('e_mail_cliente').value;
+var fono_clientevar = document.getElementById('fono_cliente').value;
+var hora_iniciovar = document.getElementById('hora_inicio').value;
+var fechavar = document.getElementById('fecha').value;
+var comentariosvar = document.getElementById('comentarios').value;
+
+
+ let data =(({
+        nombre:nombrevar, 
+        comentarios: comentariosvar,
+        rut_cliente: rut_clientevar,
+        cantidad_persona: cantidad_personavar,
+        e_mail_cliente: e_mail_clientevar,
+        fono_cliente: fono_clientevar,
+        hora_inicio: hora_iniciovar,
+        fecha: fechavar
+    }));
+                        
+                        emailjs.send("gmail","template_IzAqVIV3", data)
+                        .then(function(response) {
+                            if(response.text === 'OK'){
+                                alert('Se envio correctamente la solicitud');
+                            }
+                           console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                        }, function(err) {
+                            alert('Ocurrio un problema, intentelo de nuevo');
+                           console.log("FAILED. error=", err);
+                        });
+                   
+                
+            ev.preventDefault();
+  });
+
+        </script>
+        
+        
+        <!--================correo =================-->
 
         
         

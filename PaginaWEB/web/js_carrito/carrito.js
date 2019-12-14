@@ -34,16 +34,15 @@ class Carrito {
                 title: 'Oops...',
                 text: 'El producto ya está agregado',
                 showConfirmButton: false,
-                timer: 1000
+                timer: 3000
             })
         }
         else {
              Swal.fire({
-                type: 'info',
-                title: 'Oops...',
-                text: 'Se agrego el producto al carrito',
+                icon: 'success',
+                title: 'Producto Agregado al carrito correctamente',
                 showConfirmButton: false,
-                timer: 1000
+                timer: 3000
             });
             this.insertarCarrito(infoProducto);
             
@@ -156,9 +155,7 @@ class Carrito {
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
                 <td id='subtotales'>${producto.precio * producto.cantidad}</td>
-                <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
-                </td>
+               
             `;
             listaCompra.appendChild(row);
         });
@@ -214,7 +211,7 @@ class Carrito {
             
         }
         
-        igv = parseFloat(total * 0.18).toFixed(0);
+        igv = parseFloat(total * 0.19).toFixed(0);
         subtotal = parseFloat(total-igv).toFixed(0);
 
         document.getElementById('subtotal').innerHTML = + subtotal;
