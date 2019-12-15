@@ -40,20 +40,20 @@ function pdf() {
     doc.text(20, 60, "Productos");
     doc.text(120, 60, "Cantidad");
     doc.text(160, 60, "Precio");
-    doc.text(20, 70, "Cazuela de vacuno");
+    doc.text(20, 70, "Coca-Cola");
     doc.text(120, 70, "1");
-    doc.text(160, 70, "$5500");
-    doc.text(20, 80, "Alitas de pollo");
+    doc.text(160, 70, "$1300");
+    doc.text(20, 80, "Empanadas de queso/camaron");
     doc.text(120, 80, "1");
-    doc.text(160, 80, "$4600");
-    //doc.text(20, 90, "Pie de limon");
-    //doc.text(120, 90, "1");
-    //doc.text(160, 90, "$2300");
-    //doc.text(20, 100, "Cazuela de vacuno");
-    //doc.text(120, 100, "1");
-    //doc.text(160, 100, "$5500");
+    doc.text(160, 80, "$3400");
+    doc.text(20, 90, "Pie de limon");
+    doc.text(120, 90, "1");
+    doc.text(160, 90, "$2300");
+    doc.text(20, 100, "Cazuela de vacuno ");
+    doc.text(120, 100, "1");
+    doc.text(160, 100, "$5500");
     doc.text(120, 130, "Total");
-    doc.text(160, 130, "$10100");
+    doc.text(160, 130, "$12500");
     doc.save('Boleta.pdf');
     window.localStorage.clear();
 }
@@ -74,7 +74,7 @@ function pdf() {
        
         let options = {
             "key": "rzp_test_Y3ZqWJHAv7fVti",
-            "amount": 1010000,
+            "amount": 1250000,
             "currency": "INR",
             "receipt":"order_rcptid_11",
             "payment_capture":false,
