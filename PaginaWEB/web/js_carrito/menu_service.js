@@ -1,4 +1,4 @@
-// Retrieve wine list when application starts 
+
 EncontrarBebestibles();
 EncontrarEntradas();
 EncontrarFondos();
@@ -14,7 +14,7 @@ function EncontrarBebestibles() {
 	$.ajax({
 		type: 'GET',
 		url: "http://localhost:8090/siglo21/menu_items/21",
-		dataType: "json", // data type of response
+		dataType: "json", 
 		success: renderList
 	});
     
@@ -25,7 +25,7 @@ function EncontrarFondos() {
 	$.ajax({
 		type: 'GET',
 		url: "http://localhost:8090/siglo21/menu_items/23",
-		dataType: "json", // data type of response
+		dataType: "json", 
                 
 		success: renderListFondo
 	});
@@ -36,7 +36,7 @@ function EncontrarPostres() {
 	$.ajax({
 		type: 'GET',
 		url: "http://localhost:8090/siglo21/menu_items/24",
-		dataType: "json", // data type of response
+		dataType: "json", 
                 
 		success: renderListPostres
 	});
@@ -47,7 +47,7 @@ function EncontrarEntradas() {
 	$.ajax({
 		type: 'GET',
 		url: "http://localhost:8090/siglo21/menu_items/22",
-		dataType: "json", // data type of response
+		dataType: "json", 
                 
 		success: renderListEntradas
 	});
@@ -63,7 +63,7 @@ function EncontrarEntradas() {
 
 
 function renderList(data) {
-	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+	
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
         
 	$.each(list, function(index, producto) {
@@ -105,7 +105,7 @@ var divOut = document.getElementById('txtOut');
 
 
 function renderListEntradas(data) {
-	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+	
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
         
 	$.each(list, function(index, producto) {
@@ -142,7 +142,7 @@ var divOut = document.getElementById('txtOutEntradas');
 
 
 function renderListFondo(data) {
-	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+	
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
         
 	$.each(list, function(index, producto) {
@@ -179,7 +179,7 @@ var divOut = document.getElementById('txtOutFondo');
 
 
 function renderListPostres(data) {
-	// JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+	
 	var list = data == null ? [] : (data instanceof Array ? data : [data]);
         
 	$.each(list, function(index, producto) {
@@ -223,7 +223,7 @@ var divOut = document.getElementById('txtOutPostres');
 
 
 
-// Helper function to serialize all the form fields into a JSON string
+
 function formToJSON() {
 	var item_id = $('#item_id').val();
 	return JSON.stringify({
